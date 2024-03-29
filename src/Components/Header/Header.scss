@@ -1,0 +1,10 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.Header{
+    @include flexBox($displayFlex, column, '', '');
+    @include size(100%, 10vh);
+    background-color: $white;
+    position: fixed;
+    border-bottom: 2px solid $lavander;
+}

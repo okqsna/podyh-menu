@@ -1,0 +1,47 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.HeaderTop{
+    @include flexBox($displayFlex, row, space-between, center);
+    @include size(100%, 14vh);
+    background-color: $white;
+    padding: 12px 40px;
+    .logo__HeaderTop{
+        @include flexBox($displayFlex, row, '', center);
+        @include size(204px, 56px);
+        .img__logo__HeaderTop{
+            margin-right: 20px;
+            background-image: url('../../img/podyh_logo.svg');
+            @include size(56px, 56px);
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+        }
+        .txt__logo__HeaderTop{
+            @include flexBox($displayFlex, column, '', space-between);
+            h3{
+                color:$lightblack;
+                @include fontSet($fontFamily,22px,normal,700);
+            }
+            p{
+                color: $lightblack;
+                @include fontSet($fontFamily, 13px,normal,500);
+            }
+        }
+    }
+}
+@media only screen and (max-width:370px) {
+    .HeaderTop{
+        .logo__HeaderTop{
+        .txt__logo__HeaderTop{
+            h3{
+                @include fontSet($fontFamily,20px,normal,700);
+            }
+            p{
+                @include size(80px, '');
+                @include fontSet($fontFamily, 10px,normal,500);
+            }
+        }
+    }
+    }
+}

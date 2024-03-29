@@ -1,0 +1,394 @@
+@import "../../sass/mixins.scss";
+@import "../../sass/variables.scss";
+
+.Favorites{
+    @include flexBox($displayFlex, column, flex-start, '');
+    @include size(70%, auto);
+    min-height: 130vh;
+    padding: 20px;
+    h3{
+        @include fontSet($fontFamily, 35px, normal, 800);
+        color:$lightblack;
+        margin-bottom: 5px;
+    }
+    .totalPrice__Favorites{
+        @include fontSet($fontFamily, 20px, normal, 500);
+        color:$lightblack;
+        margin-bottom: 5px;
+        span{
+            @include fontSet($fontFamily, 20px, normal, 700);
+            margin-left: 5px;
+        }
+    }
+    .cards__Favorites{
+        flex-wrap: wrap;
+        @include flexBox($displayFlex, column, flex-start, '');
+        .card__cards__Favorites{
+            @include flexBox($displayFlex, row, '', '');
+            @include size(600px, 250px);
+            background-color: $white;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            margin-top: 20px;
+            padding: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+                transition: 0.3s;
+                background-color: $lightgrey;
+
+            }
+            .txt__card__cards__Favorites{
+                @include size(70%, 221px);
+                padding: 5px;
+                h4{
+                    @include fontSet($fontFamily, 20px, normal, 800);
+                    color:$lightblack;
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                }
+                .price__txt{
+                    @include fontSet($fontFamily, 18px, normal, 700);
+                    color:$lightblack;
+                    text-transform: uppercase;
+                    margin-bottom: 7px;
+                }
+                .caption__txt{
+                    @include fontSet($fontFamily, 14.5px, normal, 500);
+                    color:$lightblack;
+                }
+                .chars__txt__card__cards__Favorites{
+                    margin-top: 15px;
+                    @include flexBox($displayFlex, row, flex-start,center);
+                    .mass__chars__txt{
+                        @include flexBox($displayFlex, row, flex-start,center);
+                        margin-right: 10px;
+                        .img__mass__chars__txt{
+                            background-image: url('../../img/mass.svg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            @include size(20px, 16px);
+                            margin-right: 2px;
+                        }
+                        p{
+                            @include fontSet($fontFamily, 13px, normal, 500);
+                            color:$grey; 
+                        }
+                    }
+                    .new__chars__txt{
+                        @include flexBox($displayFlex, row, flex-start,center);
+                        margin-right: 10px;
+                        .img__new__chars__txt{
+                            background-image: url('../../img/new.svg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            @include size(20px, 16px);
+                            margin-right: 2px;
+                        }
+                        p{
+                            @include fontSet($fontFamily, 13px, normal, 600);
+                            color:#ED1B34;
+                        }
+                    }
+                    .acuteness__chars__txt{
+                        @include flexBox($displayFlex, row, flex-start,center);
+                        margin-right: 10px;
+                        .img__acuteness__chars__txt{
+                            background-image: url('../../img/acuteness.svg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            @include size(20px, 20px);
+                            margin-right: 2px;
+                        }
+                        p{
+                            @include fontSet($fontFamily, 13px, normal, 500);
+                            color:$grey;
+                        }
+                    }
+                    .vegetarian__chars__txt{
+                        @include flexBox($displayFlex, row, flex-start,center);
+                        margin-right: 10px;
+                        .img__vegetarian__chars__txt{
+                            background-image: url('../../img/vegetarian.svg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            @include size(20px, 20px);
+                            margin-right: 2px;
+                        }
+                        p{
+                            @include fontSet($fontFamily, 13px, normal, 500);
+                            color:$grey;
+                        }
+                    }
+                }
+            }
+            .remove__card__cards__Favorites{
+                margin-top: 15px;
+                @include size(40px,40px);
+                @include flexBox($displayFlex,column, center, center);
+                border-radius: 8px;
+                border: 1px solid #E0E0E0;
+                cursor:pointer;
+                background-color: $white;
+                &:hover{
+                    .svg__remove{
+                             fill:$lightblack;
+                    }
+                }
+            }
+            .img__card__cards__Favorites{
+                @include size(30%, 221px);
+                img{
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+    .empty__Favorites{
+        @include flexBox($displayFlex, column, center, center);
+        @include size(100%, 60vh);
+        svg{
+            margin-bottom: 20px;
+        }
+        p{
+            @include fontSet($fontFamily, 23px, normal, 600);
+            color:$lightblack;
+        }
+        .btn__empty__Favorites{
+              @include flexBox($displayFlex,column, center, center);
+              @include size(180px,45px);
+              border-radius: 8px;
+              border: 1px solid #E0E0E0;
+              cursor:pointer;
+              margin-top: 25px;
+              transition: 0.2s;
+              background-color: $white;
+              box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+              @include fontSet($fontFamily, 15px, normal, 600);
+              color:$lightblack;
+              &:hover{
+                transition: 0.2s;
+                border: 1px solid $lightblack;
+              }
+        }
+    }
+}
+@media only screen and (max-width:1100px){
+    .Favorites{
+        .cards__Favorites{
+            .card__cards__Favorites{
+                @include size(450px, fit-content);
+                min-height: 270px;
+                .txt__card__cards__Favorites{
+                    @include size(63%,'');
+                    h4{
+                        font-size: 15px;
+                    }
+                    .caption__txt{
+                        font-size: 11px;
+                    }
+                }
+                .chars__txt__card__cards__Favorites{
+                    flex-wrap: wrap;
+                }
+                .img__card__cards__Favorites{
+                    @include size(37%,'');
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:840px){
+    .Favorites{
+        .cards__Favorites{
+            .card__cards__Favorites{
+                @include size(400px, fit-content);
+                min-height: 270px;
+                .txt__card__cards__Favorites{
+                    @include size(53%,'');
+                    h4{
+                        font-size: 15px;
+                    }
+                    .caption__txt{
+                        font-size: 10px;
+                    }
+                }
+                .chars__txt__card__cards__Favorites{
+                    flex-wrap: wrap;
+                }
+                .img__card__cards__Favorites{
+                    @include size(47%,'');
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:815px){
+    .Favorites{
+        @include size(100%, auto);
+        padding: 0 40px;
+        @include flexBox($displayFlex, column, center, '');
+        .cards__Favorites{
+            @include flexBox($displayFlex, column, flex-start,'');   
+            .card__cards__Favorites{
+                @include size(500px, fit-content);
+                min-height: 200px;
+                .txt__card__cards__Favorites{
+                    @include size(70%,'');
+                }
+                .img__card__cards__Favorites{
+                    @include size(30%,'');
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:660px){
+    .Favorites{
+        padding: 0 20px;
+        .cards__Favorites{
+            .card__cards__Favorites{
+                @include size(400px, fit-content);
+                min-height: 270px;
+                .txt__card__cards__Favorites{
+                    @include size(53%,'');
+                    h4{
+                        font-size: 15px;
+                    }
+                    .caption__txt{
+                        font-size: 10px;
+                    }
+                }
+                .chars__txt__card__cards__Favorites{
+                    flex-wrap: wrap;
+                }
+                .img__card__cards__Favorites{
+                    @include size(47%,'');
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:520px){
+    .Favorites{
+        padding: 0 30px;
+        h3{
+            @include fontSet($fontFamily, 20px, normal, 800);
+            color:$lightblack;
+            margin-bottom: 5px;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .cards__Favorites{
+            @include flexBox($displayFlex, column, '', flex-start);
+            .totalPrice__Favorites{
+                font-size: 17px;
+                margin-left: 30px;
+                span{
+                    font-size: 17px;
+                }
+            }
+            .card__cards__Favorites{
+                @include size(350px, fit-content);
+                min-height: 290px;
+                .txt__card__cards__Favorites{
+                    @include size(50%,'');
+                    h4{
+                        font-size: 15px;
+                    }
+                    .caption__txt{
+                        font-size: 10px;
+                    }
+                }
+                .chars__txt__card__cards__Favorites{
+                    flex-wrap: wrap;
+                }
+                .img__card__cards__Favorites{
+                    @include size(50%,'');
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:450px){
+    .Favorites{
+        .cards__Favorites{
+            @include flexBox($displayFlex, column, flex-start,'');
+            .card__cards__Favorites{
+                @include size(320px, auto);
+                min-height: 370px;
+                .txt__card__cards__Favorites{
+                    @include size(45%,'');
+                    h4{
+                        font-size: 15px;
+                    }
+                    .caption__txt{
+                        font-size: 10px;
+                    }
+                   .mass__chars__txt{
+                    .img__mass__chars__txt{
+                        @include size(17px,15px);
+                    }
+                   p{
+                    font-size: 9px;
+                   }
+                   }
+                }
+                .chars__txt__card__cards__Favorites{
+                    flex-wrap: wrap;
+                }
+                .img__card__cards__Favorites{
+                    @include size(55%,'');
+                }
+            }
+        }
+    }
+}
+@media only screen and  (max-width:425px) {
+    .Favorites{
+        h3{
+            @include fontSet($fontFamily, 20px, normal, 800);
+            color:$lightblack;
+            margin-bottom: 5px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .cards__Favorites{
+            .totalPrice__Favorites{
+                font-size: 17px;
+                margin-left: 20px;
+                span{
+                    font-size: 17px;
+                }
+            }
+            .card__cards__Favorites{
+                @include flexBox($displayFlex, column-reverse, '','');
+                @include size(260px, 320px);
+                .txt__card__cards__Favorites{
+                    @include size(100%,'');
+                    h4{
+                        font-size: 15px;
+                    }
+                    .caption__txt{
+                        font-size: 10px;
+                    }
+                   .mass__chars__txt{
+                    .img__mass__chars__txt{
+                        @include size(17px,15px);
+                    }
+                   p{
+                    font-size: 9px;
+                   }
+                   }
+                }
+                .chars__txt__card__cards__Favorites{
+                    flex-wrap: wrap;
+                }
+                .img__card__cards__Favorites{
+                    @include size(100%,'');
+                }
+            }
+        }
+    }
+}

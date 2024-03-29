@@ -1,0 +1,42 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.CategoriesMenu{
+    @include flexBox($displayFlex, column, flex-start, '');
+    .main__CategoriesMenu{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        @include flexBox($displayFlex, column, flex-start, '');
+        .p__main__CategoriesMenu{
+            @include fontSet($fontFamily,19px,normal,700);
+            color:$lightblack;
+            text-transform: uppercase;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+    }
+    .subcategories__CategoriesMenu{
+        @include flexBox($displayFlex, column, flex-start, '');
+        p{
+            @include fontSet($fontFamily,16px,normal,700);
+            color:$lightblack;
+            text-transform: uppercase;
+            margin-top: 5px;
+            cursor: pointer;
+            &:hover{
+                transition: 0.4s;
+                font-weight: 800;
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media only screen and (max-width:815px) {
+    .CategoriesMenu{
+        @include flexBox($displayFlex, row, space-around,'');
+        .subcategories__CategoriesMenu{
+            flex-direction: row;
+            margin-left: 20px;
+        }
+    }
+}

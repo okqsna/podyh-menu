@@ -1,0 +1,114 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.SideMenu{
+    @include flexBox($displayFlex, column, '', '');
+    @include size(30%, auto);
+    min-height:130vh;
+    padding: 12px;
+    background-color: $white;
+    .place__SideMenu{
+        @include flexBox($displayFlex, column, '', '');
+        p{
+            color:$grey;
+            margin-bottom: 10px;
+            @include fontSet($fontFamily, 17px, normal, 600);
+        }
+        .content__place__SideMenu{
+            width:268px;
+            height: 52px;
+            border:2px solid $lightblack;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            @include flexBox($displayFlex, row, flex-start, center);
+            padding: 14px 16px;
+            cursor: pointer;
+            .pic__content__place__SideMenu{
+                background-image: url('../../img/place.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 24px;
+                height: 24px;
+            }
+            p{
+            color:$lightblack;
+            margin-top: 10px;
+            margin-left: 10px;
+            @include fontSet($fontFamily, 18.5px, normal, 700);
+            }
+        }
+    }
+    .menu__SideMenu{
+       @include flexBox($displayFlex, column, flex-start, '');
+      .cap__menu__SideMenu{
+        color:$grey;
+        @include fontSet($fontFamily, 17px, normal, 600);
+      }
+    }
+    .fav__SideMenu{
+        cursor: pointer;
+        margin-top: 20px;
+        @include flexBox($displayFlex, column, flex-start, '');
+        p{
+        color:$grey;
+        @include fontSet($fontFamily, 17px, normal, 600);
+        }
+        .main__fav__SideMenu{
+            margin-top: 10px;
+            @include flexBox($displayFlex, row, '', center);
+            .img__main__fav__SideMenu{
+                background-image: url('../../img/fullheart.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include size(27px, 24px);
+                margin-right:10px;
+            }
+            p{
+                color:$lightblack;
+                @include fontSet($fontFamily, 22px, normal, 800);
+                span{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:1100px){
+    .SideMenu{
+        .place__SideMenu{
+            .content__place__SideMenu{
+                @include size(200px, "");
+            }
+        }
+    }
+}
+@media only screen and (max-width:815px){
+    .SideMenu{
+        @include size(100%,auto);
+        min-height: 20vh;
+        @include flexBox($displayFlex, row, space-around, flex-start);
+        padding: 15px;
+        .place__SideMenu{
+            display: none;
+        }
+        .menu__SideMenu{
+            @include size(70%, '');
+            @include flexBox($displayFlex, column, flex-start, flex-start);
+        }
+    }
+}
+@media only screen and (max-width:520px){
+    .SideMenu{
+        @include size(100%,auto);
+        min-height: 30vh;
+        @include flexBox($displayFlex, column,space-around, flex-start);
+        padding: 15px 40px;
+        .place__SideMenu{
+            display: none;
+        }
+        .menu__SideMenu{
+            @include size(70%, '');
+            @include flexBox($displayFlex, column, flex-start, flex-start);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.Main{
+    @include flexBox($displayFlex, '', center, flex-start);
+    @include size(100%, auto);
+    min-height: 150vh;
+    margin-top: 100px;
+    padding: 24px, 40px;
+    background-color: $lavander;
+    .content__Main{
+        @include flexBox($displayFlex, row,space-between, flex-start);
+        background-color: $white;
+        min-height: 100vh;
+        @include size(90%, auto);
+        border-radius: 16px;
+        padding: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+@media only screen and (max-width:815px) {
+    .Main{
+        .content__Main{
+            @include flexBox($displayFlex, column, '', '');
+        }
+    }
+}
+@media only screen and  (max-width:425px){
+    .Main{
+        background-color: $white;
+        .content__Main{
+            @include size(100%,auto);
+        }
+    }
+}

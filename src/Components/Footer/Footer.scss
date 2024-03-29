@@ -1,0 +1,155 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.Footer{
+    @include size(100%,63vh);
+    background-color: $white;
+    @include flexBox($displayFlex, column,space-between,'');
+    .main__Footer{
+        @include flexBox($displayFlex, row, space-between, flex-start);
+        padding: 40px 60px;
+        .column1__Footer{
+            @include flexBox($displayFlex, column, '', flex-start);
+            .contacts__column1__Footer{
+                h4{
+                @include fontSet($fontFamily, 17px, $fontStyleNormal, 700);
+                margin-bottom: 10px;
+                color:$lightblack;
+            }
+            .p__contacts{
+                  @include fontSet($fontFamily, 14px, $fontStyleNormal, 500);
+                  color:$lightblack;
+                  margin-bottom: 10px;
+                  text-decoration:none;
+            }
+            }
+            .work__column1__Footer{
+                 h4{
+                @include fontSet($fontFamily, 17px, $fontStyleNormal, 700);
+                margin-bottom: 10px;
+                color:$lightblack;
+                  }  
+                 .p__work{
+                  @include fontSet($fontFamily, 14px, $fontStyleNormal, 500);
+                  color:$lightblack;
+                  margin-bottom: 10px;
+                  }
+            }
+        }
+        .column2__Footer{
+            @include flexBox($displayFlex, column, '', flex-start);
+            h4{
+                @include fontSet($fontFamily, 17px, $fontStyleNormal, 700);
+                margin-bottom: 10px;
+                color:$lightblack;
+            }
+            
+            .instagram__column2__Footer{
+                @include flexBox($displayFlex, row, '',center);
+                margin-bottom: 10px;
+                .img__instagram__column2__Footer{
+                    background-image: url('../../img/instagram.svg');
+                    @include size(24px,24px);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                }
+                 a{
+                  @include fontSet($fontFamily, 14px, $fontStyleNormal, 500);
+                  color:$lightblack;
+                  margin-left: 6px;
+                  text-decoration: none;
+                  }
+            }
+        }
+        .column3__Footer{
+            @include flexBox($displayFlex, column, '', flex-start);
+            h4{
+                @include fontSet($fontFamily, 17px, $fontStyleNormal, 700);
+                margin-bottom: 10px;
+                color:$lightblack; 
+            }
+            iframe{
+                border:none;
+                @include size(350px, 150px);
+            }
+            a{
+                @include size(250px,48px);
+                @include flexBox($displayFlex,'', center, center);
+                text-decoration: none;
+                @include fontSet($fontFamily, 15px, $fontStyleNormal, 600);
+                color:$lightblack;
+                border: 1.5px solid $grey;
+                border-radius: 8px;
+                margin-top: 20px;
+                transition: 0.2s;
+                .img__route{
+                    background-image: url('../../img/route.svg');
+                    @include size(24px,24px);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin-right: 7px;
+                }
+                &:hover{
+                    border-color: $lightblack;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+    .additional__Footer{
+        @include flexBox($displayFlex, row, space-between, flex-start);
+        padding: 20px 60px;
+        .rights__additional__Footer{
+            @include fontSet($fontFamily, 15px, $fontStyleNormal, 500);
+            color:$lightblack;
+            span{
+                font-weight: 600;
+            }
+        }
+        .creator__additional__Footer{
+            @include fontSet($fontFamily, 15px, $fontStyleNormal, 500);
+            color:$lightblack;
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color:$lightblack;
+                @include fontSet($fontFamily, 15px, $fontStyleNormal, 600);
+                transition: 0.1s;
+                &:hover{
+                    transition: 0.1s;
+                    text-decoration: underline;
+                    text-underline-offset: 7px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:860px){
+    .Footer{
+        .main__Footer{
+            .column3__Footer{
+                margin-left: 10px;
+                iframe{
+                     @include size(250px, 150px);
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:640px){
+    .Footer{
+        min-height: 60vh;
+        border-top: 2px solid #053225;
+        .main__Footer{
+            @include flexBox($displayFlex, column,'','');
+            .column1__Footer,.column2__Footer{
+                margin-top: 10px;
+            } 
+            .column3__Footer{
+                margin-left: 0px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
